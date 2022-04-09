@@ -17,17 +17,17 @@ html{
     grid-template-columns: auto;
     grid-template-rows: 150px auto 300px;
     grid-template-areas:
-    "header             header"
+    "header__menu       header__menu"
     "container__article container__article "
     "grid-footer        grid-footer"
     ;
 }
 /* MENU */
 
-.header{
+.header__menu{
     width: 100%;
     height: 100px;
-    grid-area: header;
+    grid-area: header__menu;
     position: fixed;
     display: flex;
     align-items: center;
@@ -51,15 +51,13 @@ html{
     align-items: center;
     width: 100%;
     height: 50px;
-    grid-gap: 1.5rem;   
-    flex-grow: 1;
+    grid-gap: 1rem;   
 }
 
 .menu__opciones_lista li{
     text-align: center;
     transition: 1s ease all;
 }
-
 
 .menu__productos__desplegable ul{
     list-style: none;
@@ -69,17 +67,15 @@ html{
     height: 180px;
     background-color: var(--blanco);
     cursor: pointer;
-
+    margin: 10px;
 }
+
 .menu__productos__desplegable ul li a{
     font-size: 1.2rem;
     letter-spacing: 1px;
-   
+    right:20px ;
 }
 
-.menu__productos__desplegable ul li {
-    padding-top: 10px;
-}
 .menu__productos__desplegable:hover ul{
     display: block;
 }
@@ -120,7 +116,6 @@ html{
     grid-gap: 1rem;
     align-items: center;
     padding-left: 10px;
-
 }
 
 /* BAG con JS */
@@ -339,21 +334,36 @@ table, td{
 
     .container__opciones{
         display: none;
-        position: absolute;
+        position: absolute; 
         padding: 40px 10px;
         right: 0;
         top:100px;
         bottom: 0;
         width: 100vw;
         z-index: 9;
-        background-color: rgba(230, 219, 219, 0.1);
+        background-color: rgba(169, 169, 169, 0.1);
+        backdrop-filter:10px;
+        filter: blur(4);
+        height: 100%;
+        backdrop-filter: blur(5px);
+    } 
+    
+    #menu__bst{
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(182, 163, 163, 0.741);
         backdrop-filter:5px;
         filter: blur(4);
-        height: 100vh;
-        backdrop-filter: blur(5px);
+        text-align: center;
+        position: absolute; 
+        top: 100px;        
+    }
+    
+    .navbar-nav li a {
+        color: black;
     }
 
-    .container__opciones  li, .container__opciones a {
+    /* .container__opciones  li, .container__opciones a {
         width: 100vw;
         list-style:none ;
         text-decoration: none;
@@ -364,9 +374,9 @@ table, td{
         font-size: 22px;
         transition: all 0.3s ease-in;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.815);
-    }
+    } */
 
-    .container__opciones li:hover {
+    /* .container__opciones li:hover {
         background-color: rgb(0, 0, 0);
     }
 
@@ -387,7 +397,7 @@ table, td{
         display: block;
         opacity: 1;
         transform: translate(0,0);
-    }
+    } */
 
 
     /* FOOTER */
